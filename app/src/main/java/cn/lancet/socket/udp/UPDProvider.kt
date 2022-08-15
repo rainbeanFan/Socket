@@ -21,40 +21,12 @@ class UPDProvider {
             System.`in`.read()
             provider.exit()
 
-//            println("UDPProvider Started.")
-////            指定一个端口进行数据接收
-//            val ds = DatagramSocket(20000)
-//
-//            val buf = ByteArray(512)
-//            var receivePack = DatagramPacket(buf, buf.size)
-////            接收
-//            ds.receive(receivePack)
-////            发送者的信息
-//            val ip = receivePack.address.hostAddress
-//            val port = receivePack.port
-//            val dataLen = receivePack.length
-//
-//            val data = String(receivePack.data, 0, dataLen)
-//            println("UDPProvider receive from ip:${ip}   port: ${port}  data: ${data}")
-////            根据收到的信息构建一份回送信息
-//            val responseData = "Receive data with len:$dataLen"
-//            val responseDataBytes = responseData.toByteArray()
-//
-//            val responsePacket = DatagramPacket(
-//                responseDataBytes,
-//                responseDataBytes.size, receivePack.address, receivePack.port
-//            )
-//
-//            ds.send(responsePacket)
-//
-//            println("UPDProvider Finished")
-//            ds.close()
 
         }
 
         internal class Provider(private val sn: String) : Thread() {
 
-            var done = false
+            private var done = false
             private var ds: DatagramSocket? = null
 
             override fun run() {
